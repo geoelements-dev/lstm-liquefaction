@@ -6,16 +6,6 @@ from matplotlib import pyplot as plt
 # import from my modules
 from dataimportingfunctions import get_data_dir_list
 
-
-def data_dir():
-    """"
-    define directory where data exists
-    """
-
-    data_dir = "C:/Users/baage/Desktop/Choi_MSI/02_개인_공동연구/Liq/liq_data"
-    return data_dir
-
-
 def exp_num_list():
     """"
     define experiment numbers that you want to include from the whole data
