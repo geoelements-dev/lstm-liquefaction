@@ -1,13 +1,6 @@
 # %%
-import tensorflow as tf
-import numpy as np
 import os
 import json
-from matplotlib import pyplot as plt
-
-from tensorflow.keras.layers import Dense, Dropout, SimpleRNN, LSTM, GRU, Flatten
-from tensorflow.keras import optimizers
-from tensorflow.keras.callbacks import EarlyStopping
 
 import cssdata
 
@@ -15,10 +8,20 @@ import cssdata
 
 cwd = os.getcwd()  # get current working directory
 data_dir = os.path.join(cwd, "rawdata")  # define the path for the rawdata
+inputfile = "input.json"  # name of the `input.json`
+inputfile_dir = os.path.join(cwd, inputfile)  # define the path for the `input.json`
 
-exp_num_list = cssdata.exp_num_list()  # get exp_num_list that you want to consider (by default, [7, 8, 9, 10])
-drs = cssdata.relative_density()  # get relative density (Dr) data for each trial
+# open the `input.json` file
+with open(inputfile_dir, "r") as f:
+    json_data = json.load(f)
 
-# get dataframe for all trials from experiment 7, 8, 8, and 10
-df_all = cssdata.to_dataframe(data_dir=data_dir, exp_num_list=exp_num_list, drs=drs)
+experiments = json_data["exp_num_list"]  # experiment list that you are importing
+dr_exp7 = json_data["dr_exp7"]  # relative density of each trial in experiment 7
+dr_exp8 = json_data["dr_exp8"]  # relative density of each trial in experiment 8
+dr_exp9 = json_data["dr_exp9"]  # relative density of each trial in experiment 9
+dr_exp10 = json_data["dr_exp10"]  # relative density of each trial in experiment 10
+drs = [dr_exp7, dr_exp8, dr_exp9, dr_exp10]  # collect relative densities in a list
+
+# get dataframes for all trials
+dfs = cssdata.csv_to_dataframe(basedir=data_dir, experiments=experiments, drs=drs)
 
