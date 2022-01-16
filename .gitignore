@@ -3,7 +3,7 @@
 *.pyc
 *.idea
 *.ipynb
-test.py
+debuging.py
 __pycache__/
 rawdata/
 notebook_colab.ipynb
