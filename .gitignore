@@ -6,5 +6,6 @@
 debuging.py
 __pycache__/
 rawdata/
+outputs/
 notebook_colab.ipynb
 notebook_frontera.ipynb

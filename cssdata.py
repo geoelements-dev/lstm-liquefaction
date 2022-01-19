@@ -13,39 +13,38 @@ def csv_to_dataframe(input, exp_id, trial_id, num_headers=5):
     :param num_headers: number of headers in csv file
     :return: dataframe
     """
-    experiments = input['experiments']
-    for experiment in experiments:
+    for experiment in input['experiments']:
         # iterate over experiments and find the experiment that corresponds to `exp_id` specified.
         if experiment['exp_id'] == exp_id:
             trials = experiment['trials']
-        for trial in trials:
-            # iterate over trials and fine the trial that corresponds to `trial_id` specified.
-            if trial['id'] == trial_id:
-                file = trial['file']
-                relative_density = trial['relative_density']
-                # convert csv to dataframe
-                df = pd.read_csv(f"./rawdata/Experiment-{exp_id}/{file}", header=num_headers)
-                # add relative density to the first column of the dataframe.
-                df.insert(loc=0, column="Dr [%]", value=relative_density)
-                # compute and insert ru at the 5th column of the dataframes
-                # confining pressure value of the test is located at the first row of effective vertical stress column.
-                confining_pressure = df['Effective Vertical Stress [kPa]'][0]
-                ru = df['Excess Pore Pressure [kPa]']/confining_pressure
-                df.insert(loc=5, column="ru", value=ru)
+            for trial in trials:
+                # iterate over trials and fine the trial that corresponds to `trial_id` specified.
+                if trial['id'] == trial_id:
+                    file = trial['file']
+                    relative_density = trial['relative_density']
+                    # convert csv to dataframe
+                    df = pd.read_csv(f"./rawdata/Experiment-{exp_id}/{file}", header=num_headers)
+                    # add relative density to the first column of the dataframe.
+                    df.insert(loc=0, column="Dr [%]", value=relative_density)
+                    # compute and insert ru at the 5th column of the dataframes
+                    # confining pressure value of the test is located at the first row of effective vertical stress column.
+                    confining_pressure = df['Effective Vertical Stress [kPa]'][0]
+                    ru = df['Excess Pore Pressure [kPa]']/confining_pressure
+                    df.insert(loc=5, column="ru", value=ru)
 
     return df
 
-def plot_trial(dataframes, expindex, trialindex):
-    """plot all the columns in the dataframes at expindex and trialindex"""
 
-    data_col_names = dataframes[expindex][trialindex].columns  # get data column names
+def plot_trial(input, exp_id, trial_id, ncols=1, figsize=(13, 15)):
+    # get data column names
+    df = csv_to_dataframe(input=input, exp_id=exp_id, trial_id=trial_id)
+    col_names = df.columns
 
     # plot for each data columns
-    fig, axs = plt.subplots(nrows=len(data_col_names), ncols=1, figsize=(13, 15))
+    fig, axs = plt.subplots(nrows=len(col_names), ncols=ncols, figsize=figsize)
     axs_unroll = axs.flatten()
     for i, axi in enumerate(axs_unroll):
-        axi.plot(dataframes[expindex][trialindex][data_col_names[i]])
+        axi.plot(df[col_names[i]])
         axi.set(xlabel='Data point')
-        axi.set(ylabel=data_col_names[i])
-    plt.show()
-
+        axi.set(ylabel=col_names[i])
+    plt.savefig(f'./outputs/exp{exp_id}trial{trial_id}.png')
