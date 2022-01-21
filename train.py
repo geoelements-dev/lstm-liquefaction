@@ -8,8 +8,8 @@ import cssdata
 # open the `input.json` file
 input = json.load(open("input.json", "r"))
 
-# get dataframes for all trials
-cssdata.csv_to_dataframe(input=input, exp_id=8, trial_id=3)
+# get dataframes for a trial
+cssdata.csv_to_dataframe(input=input, exp_id=9, trial_id=4)
 
-# plot a trial
-cssdata.plot_trial(input=input, exp_id=7, trial_id=1)
+# # plot a trial
+# cssdata.plot_trial(input=input, exp_id=7, trial_id=1)

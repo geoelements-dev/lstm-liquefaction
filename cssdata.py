@@ -23,7 +23,7 @@ def csv_to_dataframe(input, exp_id, trial_id, num_headers=5):
                     file = trial['file']
                     relative_density = trial['relative_density']
                     # convert csv to dataframe
-                    df = pd.read_csv(f"./rawdata/Experiment-{exp_id}/{file}", header=num_headers)
+                    df = pd.read_csv(file, header=num_headers)
                     # add relative density to the first column of the dataframe.
                     df.insert(loc=0, column="Dr [%]", value=relative_density)
                     # compute and insert ru at the 5th column of the dataframes
