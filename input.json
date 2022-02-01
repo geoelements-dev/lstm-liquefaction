@@ -1,0 +1,613 @@
+{
+  "experiment_ids": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "experiments": [
+    {
+      "exp_id": 7,
+      "trials": [
+        {
+          "id": 1,
+          "file": "rawdata/Experiment-7/Trial-1_130524_yc1.csv",
+          "relative_density": 0.55
+        },
+        {
+          "id": 2,
+          "file": "rawdata/Experiment-7/Trial-2_130527_yc1.csv",
+          "relative_density": 0.54
+        },
+        {
+          "id": 3,
+          "file": "rawdata/Experiment-7/Trial-3_130528_yc1.csv",
+          "relative_density": 0.47
+        },
+        {
+          "id": 4,
+          "file": "rawdata/Experiment-7/Trial-4_130531_yc1.csv",
+          "relative_density": 0.56
+        },
+        {
+          "id": 5,
+          "file": "rawdata/Experiment-7/Trial-5_130603_yc1.csv",
+          "relative_density": 0.52
+        },
+        {
+          "id": 6,
+          "file": "rawdata/Experiment-7/Trial-6_130618_yc1.csv",
+          "relative_density": 0.52
+        },
+        {
+          "id": 7,
+          "file": "rawdata/Experiment-7/Trial-7_130619_yc1.csv",
+          "relative_density": 0.39
+        },
+        {
+          "id": 8,
+          "file": "rawdata/Experiment-7/Trial-8_130619-02_yc1.csv",
+          "relative_density": 0.52
+        },
+        {
+          "id": 9,
+          "file": "rawdata/Experiment-7/Trial-9_130620_yc1.csv",
+          "relative_density": 0.41
+        },
+        {
+          "id": 10,
+          "file": "rawdata/Experiment-7/Trial-10_130621_yc1.csv",
+          "relative_density": 0.43
+        },
+        {
+          "id": 11,
+          "file": "rawdata/Experiment-7/Trial-11_130715_yc1.csv",
+          "relative_density": 0.39
+        },
+        {
+          "id": 12,
+          "file": "rawdata/Experiment-7/Trial-12_130716_yc1.csv",
+          "relative_density": 0.39
+        },
+        {
+          "id": 13,
+          "file": "rawdata/Experiment-7/Trial-13_130716-02_yc1.csv",
+          "relative_density": 0.33
+        },
+        {
+          "id": 14,
+          "file": "rawdata/Experiment-7/Trial-14_130716-03_yc1.csv",
+          "relative_density": 0.35
+        },
+        {
+          "id": 15,
+          "file": "rawdata/Experiment-7/Trial-15_130717_yc1.csv",
+          "relative_density": 0.43
+        },
+        {
+          "id": 16,
+          "file": "rawdata/Experiment-7/Trial-16_130718_yc1.csv",
+          "relative_density": 0.35
+        },
+        {
+          "id": 17,
+          "file": "rawdata/Experiment-7/Trial-17_130718-02_yc1.csv",
+          "relative_density": 0.41
+        },
+        {
+          "id": 18,
+          "file": "rawdata/Experiment-7/Trial-18_130719_yc1.csv",
+          "relative_density": 0.44
+        },
+        {
+          "id": 19,
+          "file": "rawdata/Experiment-7/Trial-19_130724_yc1.csv",
+          "relative_density": 0.53
+        }
+      ]
+    },
+    {
+      "exp_id": 8,
+      "trials": [
+        {
+          "id": 1,
+          "file": "rawdata/Experiment-8/Trial-1_130731_yc1.csv",
+          "relative_density": 0.76
+        },
+        {
+          "id": 2,
+          "file": "rawdata/Experiment-8/Trial-2_130802_yc1.csv",
+          "relative_density": 0.94
+        },
+        {
+          "id": 3,
+          "file": "rawdata/Experiment-8/Trial-3_130802-02_yc1.csv",
+          "relative_density": 0.89
+        },
+        {
+          "id": 4,
+          "file": "rawdata/Experiment-8/Trial-4_130805_yc1.csv",
+          "relative_density": 0.77
+        },
+        {
+          "id": 5,
+          "file": "rawdata/Experiment-8/Trial-5_130805-02_yc1.csv",
+          "relative_density": 0.72
+        },
+        {
+          "id": 6,
+          "file": "rawdata/Experiment-8/Trial-6_130806-02_yc1.csv",
+          "relative_density": 0.73
+        },
+        {
+          "id": 7,
+          "file": "rawdata/Experiment-8/Trial-7_130807_yc1.csv",
+          "relative_density": 0.85
+        },
+        {
+          "id": 8,
+          "file": "rawdata/Experiment-8/Trial-8_130807-02_yc1.csv",
+          "relative_density": 0.88
+        },
+        {
+          "id": 9,
+          "file": "rawdata/Experiment-8/Trial-9_130809_yc1.csv",
+          "relative_density": 0.90
+        },
+        {
+          "id": 10,
+          "file": "rawdata/Experiment-8/Trial-10_130516-02_yc1.csv",
+          "relative_density": 0.74
+        }
+      ]
+    },
+    {
+      "exp_id": 9,
+      "trials": [
+        {
+          "id": 1,
+          "file": "rawdata/Experiment-9/Trial-1_121227_yc1.csv",
+          "relative_density": 0.41
+        },
+        {
+          "id": 2,
+          "file": "rawdata/Experiment-9/Trial-2_121228_yc1.csv",
+          "relative_density": 0.47
+        },
+        {
+          "id": 3,
+          "file": "rawdata/Experiment-9/Trial-3_121231_yc1.csv",
+          "relative_density": 0.47
+        },
+        {
+          "id": 4,
+          "file": "rawdata/Experiment-9/Trial-4_130110_yc1.csv",
+          "relative_density": 0.40
+        },
+        {
+          "id": 5,
+          "file": "rawdata/Experiment-9/Trial-5_130113_yc1.csv",
+          "relative_density": 0.39
+        },
+        {
+          "id": 6,
+          "file": "rawdata/Experiment-9/Trial-6_130115_yc1.csv",
+          "relative_density": 0.43
+        },
+        {
+          "id": 7,
+          "file": "rawdata/Experiment-9/Trial-7_130116_yc1.csv",
+          "relative_density": 0.41
+        },
+        {
+          "id": 8,
+          "file": "rawdata/Experiment-9/Trial-8_130117_yc1.csv",
+          "relative_density": 0.49
+        },
+        {
+          "id": 9,
+          "file": "rawdata/Experiment-9/Trial-9_130118_yc1.csv",
+          "relative_density": 0.41
+        },
+        {
+          "id": 10,
+          "file": "rawdata/Experiment-9/Trial-10_130119_yc1.csv",
+          "relative_density": 0.37
+        },
+        {
+          "id": 11,
+          "file": "rawdata/Experiment-9/Trial-11_130130_yc1.csv",
+          "relative_density": 0.44
+        },
+        {
+          "id": 12,
+          "file": "rawdata/Experiment-9/Trial-12_130209_yc1.csv",
+          "relative_density": 0.47
+        },
+        {
+          "id": 13,
+          "file": "rawdata/Experiment-9/Trial-13_130213_yc1.csv",
+          "relative_density": 0.48
+        },
+        {
+          "id": 14,
+          "file": "rawdata/Experiment-9/Trial-14_130214_yc1.csv",
+          "relative_density": 0.44
+        },
+        {
+          "id": 15,
+          "file": "rawdata/Experiment-9/Trial-15_130215_yc1.csv",
+          "relative_density": 0.50
+        },
+        {
+          "id": 16,
+          "file": "rawdata/Experiment-9/Trial-16_130215-02_yc1.csv",
+          "relative_density": 0.47
+        },
+        {
+          "id": 17,
+          "file": "rawdata/Experiment-9/Trial-17_130216_yc1.csv",
+          "relative_density": 0.51
+        },
+        {
+          "id": 18,
+          "file": "rawdata/Experiment-9/Trial-18_130222.csv",
+          "relative_density": 0.48
+        },
+        {
+          "id": 19,
+          "file": "rawdata/Experiment-9/Trial-19_130228.csv",
+          "relative_density": 0.50
+        },
+        {
+          "id": 20,
+          "file": "rawdata/Experiment-9/Trial-20_130303.csv",
+          "relative_density": 0.50
+        },
+        {
+          "id": 21,
+          "file": "rawdata/Experiment-9/Trial-21_130306.csv",
+          "relative_density": 0.40
+        },
+        {
+          "id": 22,
+          "file": "rawdata/Experiment-9/Trial-22_130307.csv",
+          "relative_density": 0.44
+        },
+        {
+          "id": 23,
+          "file": "rawdata/Experiment-9/Trial-23_130307-02.csv",
+          "relative_density": 0.44
+        },
+        {
+          "id": 24,
+          "file": "rawdata/Experiment-9/Trial-24_130308.csv",
+          "relative_density": 0.45
+        },
+        {
+          "id": 25,
+          "file": "rawdata/Experiment-9/Trial-25_130322.csv",
+          "relative_density": 0.41
+        },
+        {
+          "id": 26,
+          "file": "rawdata/Experiment-9/Trial-26_130324.csv",
+          "relative_density": 0.44
+        },
+        {
+          "id": 27,
+          "file": "rawdata/Experiment-9/Trial-27_130326.csv.csv",
+          "relative_density": 0.43
+        },
+        {
+          "id": 28,
+          "file": "rawdata/Experiment-9/Trial-28_130326-02.csv",
+          "relative_density": 0.41
+        },
+        {
+          "id": 29,
+          "file": "rawdata/Experiment-9/Trial-29_130329.csv",
+          "relative_density": 0.43
+        },
+        {
+          "id": 30,
+          "file": "rawdata/Experiment-9/Trial-30_130401.csv",
+          "relative_density": 0.37
+        },
+        {
+          "id": 31,
+          "file": "rawdata/Experiment-9/Trial-31_130521.csv",
+          "relative_density": 0.42
+        },
+        {
+          "id": 32,
+          "file": "rawdata/Experiment-9/Trial-32_130628.csv",
+          "relative_density": 0.43
+        },
+        {
+          "id": 33,
+          "file": "rawdata/Experiment-9/Trial-33_130701.csv",
+          "relative_density": 0.36
+        },
+        {
+          "id": 34,
+          "file": "rawdata/Experiment-9/Trial-34_130702.csv",
+          "relative_density": 0.50
+        },
+        {
+          "id": 35,
+          "file": "rawdata/Experiment-9/Trial-35_130704.csv",
+          "relative_density": 0.42
+        },
+        {
+          "id": 36,
+          "file": "rawdata/Experiment-9/Trial-36_130705.csv",
+          "relative_density": 0.45
+        },
+        {
+          "id": 37,
+          "file": "rawdata/Experiment-9/Trial-37_130706.csv",
+          "relative_density": 0.49
+        },
+        {
+          "id": 38,
+          "file": "rawdata/Experiment-9/Trial-38_130708.csv",
+          "relative_density": 0.43
+        },
+        {
+          "id": 39,
+          "file": "rawdata/Experiment-9/Trial-39_130709.csv",
+          "relative_density": 0.39
+        },
+        {
+          "id": 40,
+          "file": "rawdata/Experiment-9/Trial-40_130815.csv",
+          "relative_density": 0.43
+        },
+        {
+          "id": 41,
+          "file": "rawdata/Experiment-9/Trial-41_130916.csv",
+          "relative_density": 0.47
+        },
+        {
+          "id": 42,
+          "file": "rawdata/Experiment-9/Trial-42_130918.csv",
+          "relative_density": 0.48
+        },
+        {
+          "id": 43,
+          "file": "rawdata/Experiment-9/Trial-43_130919.csv",
+          "relative_density": 0.55
+        },
+        {
+          "id": 44,
+          "file": "rawdata/Experiment-9/Trial-44_130921.csv",
+          "relative_density": 0.44
+        },
+        {
+          "id": 45,
+          "file": "rawdata/Experiment-9/Trial-45_130923.csv",
+          "relative_density": 0.49
+        },
+        {
+          "id": 46,
+          "file": "rawdata/Experiment-9/Trial-46_130924.csv",
+          "relative_density": 0.41
+        },
+        {
+          "id": 47,
+          "file": "rawdata/Experiment-9/Trial-47_130925.csv",
+          "relative_density": 0.55
+        }
+      ]
+    },
+    {
+      "exp_id": 10,
+      "trials": [
+        {
+          "id": 2,
+          "file": "rawdata/Experiment-10/Trial-2_130711-02.csv",
+          "relative_density": 0.78
+        },
+        {
+          "id": 5,
+          "file": "rawdata/Experiment-10/Trial-5_130726-02.csv",
+          "relative_density": 0.72
+        },
+        {
+          "id": 6,
+          "file": "rawdata/Experiment-10/Trial-6_130727.csv",
+          "relative_density": 0.84
+        },
+        {
+          "id": 7,
+          "file": "rawdata/Experiment-10/Trial-7_130728.csv",
+          "relative_density": 0.79
+        },
+        {
+          "id": 8,
+          "file": "rawdata/Experiment-10/Trial-8_130729.csv",
+          "relative_density": 0.82
+        },
+        {
+          "id": 9,
+          "file": "rawdata/Experiment-10/Trial-9_130730.csv",
+          "relative_density": 0.86
+        },
+        {
+          "id": 10,
+          "file": "rawdata/Experiment-10/Trial-10_130806.csv",
+          "relative_density": 0.89
+        },
+        {
+          "id": 11,
+          "file": "rawdata/Experiment-10/Trial-11_130809-02.csv",
+          "relative_density": 0.74
+        },
+        {
+          "id": 12,
+          "file": "rawdata/Experiment-10/Trial-12_130819.csv",
+          "relative_density": 0.70
+        },
+        {
+          "id": 13,
+          "file": "rawdata/Experiment-10/Trial-13_130820.csv",
+          "relative_density": 0.74
+        },
+        {
+          "id": 14,
+          "file": "rawdata/Experiment-10/Trial-14_130821.csv",
+          "relative_density": 0.80
+        },
+        {
+          "id": 15,
+          "file": "rawdata/Experiment-10/Trial-15_130822.csv",
+          "relative_density": 0.78
+        },
+        {
+          "id": 16,
+          "file": "rawdata/Experiment-10/Trial-16_130826-02.csv",
+          "relative_density": 0.89
+        },
+        {
+          "id": 17,
+          "file": "rawdata/Experiment-10/Trial-17_130827.csv",
+          "relative_density": 0.84
+        },
+        {
+          "id": 18,
+          "file": "rawdata/Experiment-10/Trial-18_130827-02.csv",
+          "relative_density": 0.89
+        },
+        {
+          "id": 19,
+          "file": "rawdata/Experiment-10/Trial-19_130829.csv",
+          "relative_density": 0.84
+        },
+        {
+          "id": 20,
+          "file": "rawdata/Experiment-10/Trial-20_130829-02.csv",
+          "relative_density": 0.81
+        },
+        {
+          "id": 21,
+          "file": "rawdata/Experiment-10/Trial-21_130904.csv",
+          "relative_density": 0.83
+        },
+        {
+          "id": 22,
+          "file": "rawdata/Experiment-10/Trial-22_130905.csv",
+          "relative_density": 0.91
+        },
+        {
+          "id": 23,
+          "file": "rawdata/Experiment-10/Trial-23_130905-02.csv",
+          "relative_density": 0.86
+        },
+        {
+          "id": 24,
+          "file": "rawdata/Experiment-10/Trial-24_131007.csv",
+          "relative_density": 0.78
+        },
+        {
+          "id": 25,
+          "file": "rawdata/Experiment-10/Trial-25_131008.csv",
+          "relative_density": 0.73
+        },
+        {
+          "id": 26,
+          "file": "rawdata/Experiment-10/Trial-26_131009.csv",
+          "relative_density": 0.72
+        },
+        {
+          "id": 27,
+          "file": "rawdata/Experiment-10/Trial-27_131009-02.csv",
+          "relative_density": 0.71
+        },
+        {
+          "id": 28,
+          "file": "rawdata/Experiment-10/Trial-28_131024.csv",
+          "relative_density": 0.76
+        },
+        {
+          "id": 29,
+          "file": "rawdata/Experiment-10/Trial-29_131104.csv",
+          "relative_density": 0.80
+        },
+        {
+          "id": 30,
+          "file": "rawdata/Experiment-10/Trial-30_131105.csv",
+          "relative_density": 0.73
+        },
+        {
+          "id": 31,
+          "file": "rawdata/Experiment-10/Trial-31_131106-02.csv",
+          "relative_density": 0.74
+        },
+        {
+          "id": 32,
+          "file": "rawdata/Experiment-10/Trial-32_131106-03.csv",
+          "relative_density": 0.73
+        }
+      ]
+    }
+  ],
+  "train_ids": [
+    {"exp_id": 7,
+      "trial_id": 1
+    },
+    {"exp_id": 7,
+      "trial_id": 2
+    },
+    {"exp_id": 7,
+      "trial_id": 7
+    },
+    {"exp_id": 7,
+      "trial_id": 11
+    },
+    {"exp_id": 7,
+      "trial_id": 12
+    },
+    {"exp_id": 7,
+      "trial_id": 13
+    },
+    {"exp_id": 7,
+      "trial_id": 14
+    },
+    {"exp_id": 7,
+      "trial_id": 15
+    },
+    {"exp_id": 8,
+      "trial_id": 1
+    },
+    {"exp_id": 8,
+      "trial_id": 3
+    },
+    {"exp_id": 8,
+      "trial_id": 5
+    },
+    {"exp_id": 8,
+      "trial_id": 6
+    }
+  ],
+  "test_ids": [
+    {"exp_id": 7,
+      "trial_id": 9
+    },
+    {"exp_id": 7,
+      "trial_id": 16
+    },
+    {"exp_id": 8,
+      "trial_id": 7
+    }
+  ],
+  "features": [
+    "Time [sec]",
+    "Dr [%]",
+    "Shear Stress [kPa]"
+  ],
+  "targets": [
+    "ru"
+  ],
+  "window_length": 400
+}
