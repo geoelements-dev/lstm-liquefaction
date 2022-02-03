@@ -1,7 +1,8 @@
 # %%
 import json
 import preparedata
-
+import numpy as np
+import model
 
 # %% import data and dataframe
 
@@ -30,3 +31,38 @@ rnn_data_train = preparedata.rnn_inputs(
 rnn_data_test = preparedata.rnn_inputs(
     dfs=normalized_test_dfs, features=input["features"], targets=input["targets"], window_length=input["window_length"]
 )
+
+# %% set variables for train and test
+
+# train
+train_x_rnns = rnn_data_train["x_rnns"]  # variables for plotting
+train_y_rnns = rnn_data_train["y_rnns"]
+train_x_rnn_concat = np.concatenate(train_x_rnns, 0)  # variables for training model
+train_y_rnn_concat = np.concatenate(train_y_rnns, 0)
+
+# test
+test_x_rnns = rnn_data_test["x_rnns"]  # variables for plotting
+test_y_rnns = rnn_data_test["y_rnns"]
+test_x_rnn_concat = np.concatenate(test_x_rnns, 0)  # variables for training model
+test_y_rnn_concat = np.concatenate(test_y_rnns, 0)
+
+# %% shuffle train set
+
+shuffler = np.random.permutation(len(train_x_rnn_concat))
+train_x_rnn_concat_sf = train_x_rnn_concat[shuffler]
+train_y_rnn_concat_sf = train_y_rnn_concat[shuffler]
+
+
+#%% build model
+
+# build a model
+lstm_model = model.build_model(window_length=input["window_length"], num_features=len(input["features"]))
+
+# show model summary
+lstm_model.summary()
+
+#%% compile and fit
+history = model.compile_and_fit(paths=input["paths"],
+                                model=lstm_model, patience=1000, loss=['mean_squared_error'], metric=['mse'],
+                                train_x=test_x_rnn_concat, train_y=test_y_rnn_concat
+                                )
