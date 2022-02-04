@@ -26,17 +26,17 @@ def build_model(window_length, num_features):
     return model
 
 
-def compile_and_fit(paths, model, patience, loss, metric, train_x, train_y, learning_rate=0.001):
+def compile_and_fit(input, model, train_x, train_y):
     # callback setting
     callbacks = [
-        EarlyStopping(monitor='val_loss', patience=patience, mode='min'),
+        EarlyStopping(monitor='val_loss', patience=1000, mode='min'),
         # ModelCheckpoint(filepath=paths["check_point"], monitor='val_loss', save_best_only=True, mode='min')
     ]
 
     # compile
-    model.compile(loss=loss,
-                  optimizer=optimizers.Adam(learning_rate=learning_rate),  # default learning_rate is 0.001
-                  metrics=metric)
+    model.compile(loss=input["compile_options"]["loss"],
+                  optimizer=optimizers.Adam(learning_rate=input["compile_options"]["learning_rate"]),
+                  metrics=input["compile_options"]["metric"])
 
     # fit the model
     history = model.fit(train_x, train_y,
@@ -45,7 +45,7 @@ def compile_and_fit(paths, model, patience, loss, metric, train_x, train_y, lear
                         callbacks=callbacks
                         )
 
-    savedir = paths["model"]
+    savedir = input["paths"]["model"]
     os.makedirs(savedir, exist_ok=True)
     model.save(savedir)
 

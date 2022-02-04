@@ -62,7 +62,7 @@ lstm_model = model.build_model(window_length=input["window_length"], num_feature
 lstm_model.summary()
 
 #%% compile and fit
-history = model.compile_and_fit(paths=input["paths"],
-                                model=lstm_model, patience=1000, loss=['mean_squared_error'], metric=['mse'],
+history = model.compile_and_fit(input=input,
+                                model=lstm_model,
                                 train_x=test_x_rnn_concat, train_y=test_y_rnn_concat
                                 )
