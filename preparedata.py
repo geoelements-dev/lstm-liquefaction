@@ -60,7 +60,7 @@ def rnn_inputs(dfs, features, targets, window_length):
         sampled_targets = list()
         for i in range(datapoint-window_length):
             sampled_feature = feature_dataset[i:i+window_length, :]
-            sampled_target = target_dataset[i:i+window_length, :]
+            sampled_target = target_dataset[i+window_length, :]
             sampled_features.append(sampled_feature)  # shape=(samples, window_length, features)
             sampled_targets.append(sampled_target)  # shape=(samples, window_length, targets)
         x_rnn = np.asarray(sampled_features)

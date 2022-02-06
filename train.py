@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import model
 
 import preparedata
+import result_plot_tools
 import numpy as np
 
 # %% import data and dataframe
@@ -102,7 +103,7 @@ test_datasets = result_plot_tools.plot_dataset(
     subplot_ncols=3
 )
 
-# %% make prediction
+# %% make prediction and plot the result
 
 train_predictions = list()
 test_predictions = list()
@@ -117,4 +118,15 @@ for test_x_rnn in test_x_rnns:
     test_prediction = lstm_model.predict(test_x_rnn)
     test_predictions.append(test_prediction)
 
-# %% plot prediction result
+prediction_train = result_plot_tools.plot_prediction(
+    save_name="prediction_train",
+    targets=train_y_rnns,
+    prediction=train_predictions,
+    ids=train_ids,
+    subplot_ncols=3)
+
+#%%
+plt.plot(train_y_rnns[1])
+plt.plot(train_predictions[1])
+
+
