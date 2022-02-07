@@ -1,7 +1,8 @@
 # import from existing libraries
 import pandas as pd
+import os
 from matplotlib import pyplot as plt
-import json
+
 
 def csv_to_dataframe(input, exp_id, trial_id, num_headers=5):
     """
@@ -47,4 +48,7 @@ def plot_trial(input, exp_id, trial_id, ncols=1, figsize=(13, 15)):
         axi.plot(df[col_names[i]])
         axi.set(xlabel='Data point')
         axi.set(ylabel=col_names[i])
-    plt.savefig(f'./outputs/exp{exp_id}trial{trial_id}.png')
+
+    savedir = input['paths']['plot']
+    os.makedirs(savedir, exist_ok=True)
+    plt.savefig(f"{savedir}/exp{exp_id}trial{trial_id}.png")

@@ -609,5 +609,21 @@
   "targets": [
     "ru"
   ],
-  "window_length": 400
+  "window_length": 50,
+  "paths": {
+    "output_base": "outputs",
+    "model": "outputs/saved_models/lstm_model_1",
+    "check_point": "outputs/check_point",
+    "plot": "outputs/saved_plots"
+    },
+  "compile_options": {
+    "loss": "mean_squared_error",
+    "metric": "mse",
+    "learning_rate": 0.001
+  },
+  "fit_options": {
+    "epochs": 10,
+    "batch_size": 32,
+    "validation_split": 0.20
+  }
 }
