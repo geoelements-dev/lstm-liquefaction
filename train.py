@@ -125,8 +125,3 @@ prediction_train = result_plot_tools.plot_prediction(
     ids=train_ids,
     subplot_ncols=3)
 
-#%%
-plt.plot(train_y_rnns[1])
-plt.plot(train_predictions[1])
-
-
