@@ -1,7 +1,7 @@
 # %%
 import json
 import matplotlib.pyplot as plt
-import model
+# import model
 
 import preparedata
 import result_plot_tools
