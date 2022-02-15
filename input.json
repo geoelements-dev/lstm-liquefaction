@@ -609,10 +609,10 @@
   "targets": [
     "ru"
   ],
-  "window_length": 50,
+  "window_length": 400,
   "paths": {
     "output_base": "outputs",
-    "model": "outputs/saved_models/lstm_model_1",
+    "model": "outputs/saved_models/lstm_train12test3_25epoch",
     "check_point": "outputs/check_point",
     "plot": "outputs/saved_plots"
     },
@@ -622,7 +622,7 @@
     "learning_rate": 0.001
   },
   "fit_options": {
-    "epochs": 10,
+    "epochs": 25,
     "batch_size": 32,
     "validation_split": 0.20
   }

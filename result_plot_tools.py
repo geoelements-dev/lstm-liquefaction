@@ -32,8 +32,8 @@ def plot_prediction(save_name, targets, prediction, ids, subplot_ncols=3):
     fig, axs = plt.subplots(nrows=nr, ncols=subplot_ncols, figsize=(subplot_ncols * 5, nr * 3))
     axs_unroll = axs.flatten()
     for i in range(num_trials):
-        axs_unroll[i].plot(targets[i], c='goldenrod', label='train data')
-        axs_unroll[i].plot(prediction[i], c='navy', label='train result')
+        axs_unroll[i].plot(targets[i], c='goldenrod', label='input')
+        axs_unroll[i].plot(prediction[i], c='navy', label='prediction')
         axs_unroll[i].legend(loc='best')
         axs_unroll[i].set_xlabel("Data points")
         axs_unroll[i].set_ylabel("Normalized values")

@@ -39,14 +39,13 @@ def compile_and_fit(input, model, train_x, train_y):
                   metrics=input["compile_options"]["metric"])
 
     # fit the model
-    model.load_weights(filepath=input["paths"]["check_point"])
     history = model.fit(train_x, train_y,
-                        epochs=10, batch_size=32, verbose=2,
+                        epochs=input["fit_options"]["epochs"], batch_size=32, verbose=2,
                         validation_split=0.20,
                         callbacks=callbacks
                         )
 
-    savedir = input["paths"]["model"]
+    savedir = os.path.join(input["paths"]["model"])
     # os.makedirs(savedir, exist_ok=True)
     model.save(savedir)
 

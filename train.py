@@ -2,17 +2,22 @@
 import json
 import matplotlib.pyplot as plt
 import model
-
-import preparedata
 import result_plot_tools
+import preparedata
 import numpy as np
+import os
+import tensorflow as tf
 
 # %% import data and dataframe
 
 # open the `input.json` file
-import result_plot_tools
 
 input = json.load(open("input.json", "r"))
+
+# make save dirs
+os.makedirs(input["paths"]["model"], exist_ok=True)
+os.makedirs(input["paths"]["check_point"], exist_ok=True)
+os.makedirs(input["paths"]["plot"], exist_ok=True)
 
 # %% select exp-trials to use for train & test
 
@@ -67,7 +72,7 @@ lstm_model.summary()
 # %% compile and fit
 history = model.compile_and_fit(
     input=input, model=lstm_model,
-    train_x=test_x_rnn_concat, train_y=test_y_rnn_concat,
+    train_x=train_x_rnn_concat_sf, train_y=train_y_rnn_concat_sf,
 )
 
 # %% training history
@@ -81,7 +86,6 @@ plt.ylabel(f"Loss ({input['compile_options']['metric']})")
 plt.savefig(f"{input['paths']['plot']}/training_history")
 
 # %% show results
-import tensorflow as tf
 
 lstm_model = tf.keras.models.load_model(input['paths']['model'])
 
