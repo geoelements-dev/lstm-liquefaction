@@ -1,4 +1,4 @@
-# %%
+# %% import
 import json
 import matplotlib.pyplot as plt
 import model
@@ -7,11 +7,11 @@ import preparedata
 import numpy as np
 import os
 import tensorflow as tf
+from sklearn import metrics
 
 # %% import data and dataframe
 
 # open the `input.json` file
-
 input = json.load(open("input.json", "r"))
 
 # make save dirs
@@ -61,33 +61,40 @@ shuffler = np.random.permutation(len(train_x_rnn_concat))
 train_x_rnn_concat_sf = train_x_rnn_concat[shuffler]
 train_y_rnn_concat_sf = train_y_rnn_concat[shuffler]
 
-# %% build model
+# %% build model and fit
 
-# build a model
-lstm_model = model.build_model(window_length=input["window_length"], num_features=len(input["features"]))
+model_path = input["paths"]["model"]+"/saved_model.pb"
 
-# show model summary
-lstm_model.summary()
+if os.path.isfile(model_path):
+    lstm_model = tf.keras.models.load_model(input['paths']['model'])
+    print("Pre-exsisting model has been loaded")
+else:
+    # build a model
+    lstm_model = model.build_model(window_length=input["window_length"], num_features=len(input["features"]))
 
-# %% compile and fit
-history = model.compile_and_fit(
-    input=input, model=lstm_model,
-    train_x=train_x_rnn_concat_sf, train_y=train_y_rnn_concat_sf,
-)
+    # show model summary
+    lstm_model.summary()
 
-# %% training history
+    # compile and fit
+    history = model.compile_and_fit(
+        input=input, model=lstm_model,
+        train_x=train_x_rnn_concat_sf, train_y=train_y_rnn_concat_sf,
+    )
 
-plt.figure()
-plt.plot(history.history['loss'], label='train')
-plt.plot(history.history['val_loss'], label='val')
-plt.legend()
-plt.xlabel("Epoch")
-plt.ylabel(f"Loss ({input['compile_options']['metric']})")
-plt.savefig(f"{input['paths']['plot']}/training_history")
+    # plot training history
+    plt.figure()
+    plt.plot(history.history['loss'], label='train')
+    plt.plot(history.history['val_loss'], label='val')
+    plt.legend()
+    plt.xlabel("Epoch")
+    plt.ylabel(f"Loss ({input['compile_options']['metric']})")
+    plt.savefig(f"{input['paths']['plot']}/training_history")
 
-# %% show results
+# %% show model
 
-lstm_model = tf.keras.models.load_model(input['paths']['model'])
+tf.keras.utils.plot_model(model=lstm_model, show_shapes=True, to_file=input["paths"]["output_base"]+"/model.png")
+
+# %% plot train and test datasets
 
 train_datasets = result_plot_tools.plot_dataset(
     save_name="train_datasets",
@@ -107,7 +114,14 @@ test_datasets = result_plot_tools.plot_dataset(
     subplot_ncols=3
 )
 
-# %% make prediction and plot the result
+# %% show model
+
+tf.keras.utils.plot_model(model=lstm_model, show_shapes=True, to_file=input["paths"]["output_base"]+"/model.png")
+
+# %% make prediction
+
+# load model
+lstm_model = tf.keras.models.load_model(input['paths']['model'])
 
 train_predictions = list()
 test_predictions = list()
@@ -122,10 +136,46 @@ for test_x_rnn in test_x_rnns:
     test_prediction = lstm_model.predict(test_x_rnn)
     test_predictions.append(test_prediction)
 
+# %% make prediction
+
+train_predictions = list()
+test_predictions = list()
+
+# get prediction with trial datasets
+for train_x_rnn in train_x_rnns:
+    train_prediction = lstm_model.predict(train_x_rnn)
+    train_predictions.append(train_prediction)
+
+# get prediction with test datasets
+for test_x_rnn in test_x_rnns:
+    test_prediction = lstm_model.predict(test_x_rnn)
+    test_predictions.append(test_prediction)
+
+# %% plot predictions and get score
+
+# plot prediction
 prediction_train = result_plot_tools.plot_prediction(
     save_name="prediction_train",
     targets=train_y_rnns,
     prediction=train_predictions,
     ids=train_ids,
     subplot_ncols=3)
+
+prediction_test = result_plot_tools.plot_prediction(
+    save_name="prediction_test",
+    targets=test_y_rnns,
+    prediction=test_predictions,
+    ids=test_ids,
+    subplot_ncols=3)
+
+# compute prediction score
+targets = np.concatenate(test_y_rnns)  # Y_true = Y (original values)
+prediction = np.concatenate(test_predictions)
+test_score = str(metrics.mean_squared_error(targets, prediction))
+
+with open(input["paths"]["test_score"], "w") as file1:
+    toFile = test_score
+    file1.write(toFile)
+
+print(test_score)
 

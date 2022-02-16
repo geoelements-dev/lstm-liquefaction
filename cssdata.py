@@ -22,7 +22,10 @@ def csv_to_dataframe(input, exp_id, trial_id, num_headers=5):
                 # iterate over trials and fine the trial that corresponds to `trial_id` specified.
                 if trial['id'] == trial_id:
                     file = trial['file']
-                    relative_density = trial['relative_density']
+                    # read relative density info
+                    with open(file) as f:
+                        data = f.readlines()[num_headers-1]
+                    relative_density = float(data[18:22])
                     # convert csv to dataframe
                     df = pd.read_csv(file, header=num_headers)
                     # add relative density to the first column of the dataframe.

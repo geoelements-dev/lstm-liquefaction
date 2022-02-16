@@ -8,9 +8,9 @@ input = json.load(open("input.json", "r"))
 def plot_dataset(save_name, features, targets, ids, legends, subplot_ncols=3):
 
     num_trials = len(features)
-    nr = int(np.ceil(num_trials)/subplot_ncols)
+    nr = int(np.ceil(num_trials/subplot_ncols))
 
-    fig, axs = plt.subplots(nrows=nr, ncols=subplot_ncols, figsize=(subplot_ncols*5, nr*3))
+    fig, axs = plt.subplots(nrows=nr, ncols=subplot_ncols, figsize=(subplot_ncols * 5, nr * 3))
     unrolled_axs = axs.flatten()
     for i in range(num_trials):
         unrolled_axs[i].plot(features[i])

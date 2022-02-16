@@ -612,9 +612,10 @@
   "window_length": 400,
   "paths": {
     "output_base": "outputs",
-    "model": "outputs/saved_models/lstm_train12test3_25epoch",
+    "model": "outputs/saved_models/lstm_model",
     "check_point": "outputs/check_point",
-    "plot": "outputs/saved_plots"
+    "plot": "outputs/saved_plots",
+    "test_score": "outputs/test_score.txt"
     },
   "compile_options": {
     "loss": "mean_squared_error",
@@ -622,7 +623,7 @@
     "learning_rate": 0.001
   },
   "fit_options": {
-    "epochs": 25,
+    "epochs": 30,
     "batch_size": 32,
     "validation_split": 0.20
   }

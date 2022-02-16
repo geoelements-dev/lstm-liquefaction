@@ -40,7 +40,7 @@ def compile_and_fit(input, model, train_x, train_y):
 
     # fit the model
     history = model.fit(train_x, train_y,
-                        epochs=input["fit_options"]["epochs"], batch_size=32, verbose=2,
+                        epochs=input["fit_options"]["epochs"], batch_size=input["fit_options"]["batch_size"], verbose=2,
                         validation_split=0.20,
                         callbacks=callbacks
                         )
