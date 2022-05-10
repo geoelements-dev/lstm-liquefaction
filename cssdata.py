@@ -1,7 +1,38 @@
-# import from existing libraries
+import numpy as np
 import pandas as pd
 import os
 from matplotlib import pyplot as plt
+
+def augment_data(df, add_length=900, time_step=0.012):
+
+    # add static state CSS test result (before test starts) to augment data
+    css_start_time = time_step*add_length
+    add_Dr = np.full((add_length, 1), df["Dr [%]"][0])
+    add_Time = np.reshape(np.linspace(0, css_start_time, add_length), (add_length, 1))
+    add_ShearStrain = np.full((add_length, 1), 0)
+    add_SheerStress = np.full((add_length, 1), 0)
+    add_ConfPressure = np.full((add_length, 1), df["Effective Vertical Stress [kPa]"][0])
+    add_ru = np.full((add_length, 1), df["ru"][0])
+    add_PWP = np.full((add_length, 1), df["Excess Pore Pressure [kPa]"][0])
+    # aggregate as array
+    add_data = np.hstack(
+        (add_Dr, add_Time, add_ShearStrain, add_SheerStress, add_ConfPressure, add_ru, add_PWP)
+    )
+
+    # Append original timesteps to added timesteps and shift the time correctly
+    first_timesteps = add_Time
+    last_timesteps = first_timesteps[-1, 0] + df["Time [sec]"].to_numpy()
+    last_timesteps = np.reshape(last_timesteps, (last_timesteps.shape[0], 1))
+    full_timesteps = np.vstack((first_timesteps, last_timesteps))
+    # Make it df
+    header = df.columns
+    df_add_data = pd.DataFrame(add_data, columns=header)
+
+    # Append original df to added df
+    df_augmented = df_add_data.append(df, ignore_index=True)
+    df_augmented["Time [sec]"] = full_timesteps
+
+    return df_augmented
 
 
 def csv_to_dataframe(input, exp_id, trial_id, num_headers=5):
@@ -35,6 +66,8 @@ def csv_to_dataframe(input, exp_id, trial_id, num_headers=5):
                     confining_pressure = df['Effective Vertical Stress [kPa]'][0]
                     ru = df['Excess Pore Pressure [kPa]']/confining_pressure
                     df.insert(loc=5, column="ru", value=ru)
+                    # Augment data by inserting before-CSS test result before the original result
+                    df = augment_data(df=df)
 
     return df
 
