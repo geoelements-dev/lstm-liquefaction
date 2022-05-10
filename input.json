@@ -609,7 +609,7 @@
   "targets": [
     "ru"
   ],
-  "window_length": 400,
+  "window_length": 800,
   "paths": {
     "output_base": "outputs",
     "model": "outputs/saved_models/lstm_model",
@@ -620,7 +620,7 @@
   "compile_options": {
     "loss": "mean_squared_error",
     "metric": "mse",
-    "learning_rate": 0.001
+    "learning_rate": 0.0002
   },
   "fit_options": {
     "epochs": 30,

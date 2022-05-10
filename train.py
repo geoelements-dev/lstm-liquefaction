@@ -156,6 +156,7 @@ for test_x_rnn in test_x_rnns:
 # plot prediction
 prediction_train = result_plot_tools.plot_prediction(
     save_name="prediction_train",
+    features=rnn_data_train['feature_datasets'],
     targets=train_y_rnns,
     prediction=train_predictions,
     ids=train_ids,
@@ -163,6 +164,7 @@ prediction_train = result_plot_tools.plot_prediction(
 
 prediction_test = result_plot_tools.plot_prediction(
     save_name="prediction_test",
+    features=rnn_data_test['feature_datasets'],
     targets=test_y_rnns,
     prediction=test_predictions,
     ids=test_ids,
