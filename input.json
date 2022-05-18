@@ -623,7 +623,7 @@
     "learning_rate": 0.0002
   },
   "fit_options": {
-    "epochs": 30,
+    "epochs": 100,
     "batch_size": 32,
     "validation_split": 0.20
   }
