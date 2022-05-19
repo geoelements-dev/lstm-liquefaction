@@ -1,4 +1,4 @@
-# %% import
+# %% import 
 import json
 import matplotlib.pyplot as plt
 import model
@@ -8,6 +8,7 @@ import numpy as np
 import os
 import tensorflow as tf
 from sklearn import metrics
+import pandas as pd
 
 # %% import data and dataframe
 
