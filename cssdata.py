@@ -12,8 +12,8 @@ def augment_data(df, add_length=900, time_step=0.012):
     add_ShearStrain = np.full((add_length, 1), 0)
     add_SheerStress = np.full((add_length, 1), 0)
     add_ConfPressure = np.full((add_length, 1), df["Effective Vertical Stress [kPa]"][0])
-    add_ru = np.full((add_length, 1), df["ru"][0])
-    add_PWP = np.full((add_length, 1), df["Excess Pore Pressure [kPa]"][0])
+    add_ru = np.full((add_length, 1), 0)
+    add_PWP = np.full((add_length, 1), 0)
     # aggregate as array
     add_data = np.hstack(
         (add_Dr, add_Time, add_ShearStrain, add_SheerStress, add_ConfPressure, add_ru, add_PWP)

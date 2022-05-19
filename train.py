@@ -135,6 +135,25 @@ for train_x_rnn in train_x_rnns:
 for test_x_rnn in test_x_rnns:
     test_prediction = lstm_model.predict(test_x_rnn)
     test_predictions.append(test_prediction)
+#%%
+test_predictions = list()
+for i, datapoints in enumerate(rnn_data_test["datapoints"]):
+    nsamples = datapoints - input["window_length"]
+    features = rnn_data_test["feature_datasets"][i]
+    initial_features = features[:input["window_length"], :]
+
+    current_feature = np.reshape(initial_features, (1, input["window_length"], np.shape(features)[-1]))
+    predictions = []
+
+    for sample in range(nsamples):
+        prediction = lstm_model.predict(current_feature)
+        predictions.append(prediction)
+        features[sample+input["window_length"], -1] = prediction
+        next_feature = features[sample+1:sample+1+input["window_length"], :]
+        current_feature = np.reshape(next_feature, (1, input["window_length"], np.shape(features)[-1]))
+
+    test_predictions.append(predictions)
+
 
 # %% make prediction
 
