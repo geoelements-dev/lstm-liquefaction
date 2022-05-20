@@ -13,7 +13,7 @@ def select_datasets(dataset_ids):
     return dfs
 
 
-def normalize(dfs):
+def normalize(dfs, select_columns=None):
     """
     normalize time by the final time, and normalize shear stress by confining pressure of the test
     """
@@ -24,7 +24,10 @@ def normalize(dfs):
         normalized_df = df.copy()
         normalized_df["Shear Stress [kPa]"] = df["Shear Stress [kPa]"] / confining_pressure
         normalized_df["Time [sec]"] = df["Time [sec]"] / final_time
-        normalized_dfs.append(normalized_df)
+        if select_columns is None:
+            normalized_dfs.append(normalized_df)
+        else:
+            normalized_dfs.append(normalized_df[select_columns])
     return normalized_dfs
 
 
